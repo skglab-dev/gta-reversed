@@ -49,8 +49,8 @@ void ProcessEvents() {
             }
             static CVector2D s_MousePos{};
             if (FrontEndMenuManager.m_bMenuActive) {
-                s_MousePos.x += e.motion.xrel * CCamera::m_fMouseAccelHorzntl * 100.f;
-                s_MousePos.y += e.motion.yrel * CCamera::m_fMouseAccelVertical * 100.f;
+                s_MousePos.x += e.motion.xrel + CCamera::m_fMouseAccelHorzntl; // * CCamera::m_fMouseAccelHorzntl * 100.f;
+                s_MousePos.y += e.motion.yrel + CCamera::m_fMouseAccelVertical; // * CCamera::m_fMouseAccelVertical * 100.f;
             } else {
                 s_MousePos.x = e.motion.x;
                 s_MousePos.y = e.motion.y;
